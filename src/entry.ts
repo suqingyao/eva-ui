@@ -1,5 +1,4 @@
 import { App } from 'vue'
-// @ts-ignore
 import WButton from './button/index'
 import JsxButton from './JsxButton'
 

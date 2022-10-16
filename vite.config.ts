@@ -2,7 +2,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import Unocss from "./config/unocss";
+import Unocss from './config/unocss'
+import { genApiDoc } from '@ruabick/vite-plugin-gen-api-doc'
 
 export default defineConfig({
   resolve: {
@@ -10,11 +11,7 @@ export default defineConfig({
       '@': resolve(__dirname, './', 'src')
     }
   },
-  plugins: [
-    vue(),
-    vueJsx({}),
-    Unocss()
-  ],
+  plugins: [vue(), vueJsx(), Unocss(), genApiDoc()],
   build: {
     rollupOptions: {
       external: ['vue', 'vue-router'],
@@ -29,7 +26,7 @@ export default defineConfig({
       entry: './src/entry.ts',
       name: 'WowUI',
       fileName: 'wow-ui',
-      formats: ['es', 'umd', 'iife']
+      formats: ['esm', 'umd', 'iife']
     }
   }
 })

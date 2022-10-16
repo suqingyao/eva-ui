@@ -1,6 +1,5 @@
 import { createApp } from 'vue/dist/vue.esm-browser'
 import WowUI from './entry'
-// @ts-ignore
 import App from './App.vue'
 
 createApp({
@@ -12,8 +11,7 @@ createApp({
        <w-button color="yellow">黄色按钮</w-button>
        <w-button color="red">红色按钮</w-button>
    </div>
-   <div style="margin-bottom:20px;"
-   >
+   <div style="margin-bottom:20px;">
        <w-button color="blue" plain>朴素按钮</w-button>
        <w-button color="green" plain>绿色按钮</w-button>
        <w-button color="gray" plain>灰色按钮</w-button>
@@ -40,4 +38,6 @@ createApp({
        <w-button color="red" round plain icon="delete"></w-button>
    </div>
        `
-}).use(WowUI).mount('#app')
+})
+  .use(WowUI)
+  .mount('#app')
