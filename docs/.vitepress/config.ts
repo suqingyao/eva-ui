@@ -1,4 +1,5 @@
 import { applyPlugins } from '@ruabick/md-demo-plugins'
+import { text } from 'stream/consumers'
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -7,12 +8,21 @@ export default defineConfig({
   themeConfig: {
     sidebar: [
       {
-        text: '通用',
-        items: [{ text: 'Button 按钮', link: '/components/button/' }]
-      },
-      {
-        text: '快速开始',
-        items: []
+        items: [
+          {
+            text: 'Introduction',
+            items: [
+              {
+                text: 'Get Started',
+                link: '/start'
+              }
+            ]
+          },
+          {
+            text: 'Basic 基础组件',
+            items: [{ text: 'Button 按钮', link: '/components/button/' }]
+          }
+        ]
       }
     ]
   },
