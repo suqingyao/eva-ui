@@ -12,7 +12,8 @@
     "jest": "jest",
     "vitest": "vitest",
     "lint": "eslint --fix --ext .ts,.vue,.tsx src",
-    "format": "prettier --write \"src/**/*.{ts,tsx,vue}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,vue}\"",
+    "test:run": "vitest run"
   },
   "author": "cullyfung",
   "license": "MIT",
