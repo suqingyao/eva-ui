@@ -1,5 +1,4 @@
 import { applyPlugins } from '@ruabick/md-demo-plugins'
-import { text } from 'stream/consumers'
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -27,7 +26,7 @@ export default defineConfig({
     ]
   },
   markdown: {
-    config: md => {
+    config: (md) => {
       applyPlugins(md)
     }
   }
