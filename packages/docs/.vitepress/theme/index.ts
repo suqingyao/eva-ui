@@ -1,5 +1,5 @@
 import Theme from 'vitepress/theme'
-import WowUI from '../../../src/entry'
+import WowUI from '../../../components/entry'
 import DemoBlock from '@ruabick/vitepress-demo-block'
 import '@ruabick/vitepress-demo-block/dist/style.css'
 

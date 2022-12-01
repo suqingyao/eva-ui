@@ -4,7 +4,7 @@
     "declarationDir": "./dist/types",
     "jsx": "preserve"
   },
-  "include": ["./**/.*", "./src/shims-vue.d.ts"],
+  "include": ["./**/.*"],
   "exclude": ["node_modules"],
   "esModuleInterop": true,
   "allowSyntheticDefaultImports": "true"

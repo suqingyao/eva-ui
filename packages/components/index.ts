@@ -1,6 +1,7 @@
 import { createApp } from 'vue/dist/vue.esm-browser'
 import WowUI from './entry'
 import App from './App.vue'
+import 'uno.css'
 
 createApp({
   template: `
