@@ -1,6 +1,7 @@
 import { App } from 'vue'
 import WButton from './button/index'
 import JsxButton from './JsxButton'
+import 'unocss'
 
 export default {
   install(app: App) {

@@ -1,14 +1,12 @@
-# WOW-UI
+# Components Library Starter
 
-inspired by element-plus
+fast build a monorepo components library
 
 # Usage
 
-`pnpm add wow-ui`
-
 ```vue
-import { createApp } from 'vue' import WowUI from 'wow-ui' import App from
-'./App.vue' createApp(App).use(WowUI).mount('#app')
+import { createApp } from 'vue' import WowUI from 'wow-ui' \ import App from
+'./App.vue' \ createApp(App).use(WowUI).mount('#app')
 ```
 
 # License
