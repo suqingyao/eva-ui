@@ -2,7 +2,7 @@ import { applyPlugins } from '@ruabick/md-demo-plugins'
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: '🍒 Wow-UI',
+  title: '🍒 Eva-UI',
   description: '组件库搭建的教学模型',
   themeConfig: {
     sidebar: [
@@ -19,7 +19,7 @@ export default defineConfig({
           },
           {
             text: 'Basic 基础组件',
-            items: [{ text: 'Button 按钮', link: '/components/button/' }]
+            items: [{ text: 'Button 按钮', link: '/components/button' }]
           }
         ]
       }

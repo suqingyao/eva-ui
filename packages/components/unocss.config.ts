@@ -1,34 +1,24 @@
-import { defineConfig, presetAttributify, presetUno, presetIcons } from 'unocss'
-
-const colors = [
-  'white',
-  'black',
-  'gray',
-  'red',
-  'yellow',
-  'green',
-  'blue',
-  'indigo',
-  'purple',
-  'pink'
-]
-
-const safelist = [
-  ...colors.map((v) => `bg-${v}-500`),
-  ...colors.map((v) => `hover:bg-${v}-700`),
-  ...[
-    'search',
-    'edit',
-    'check',
-    'message',
-    'star-off',
-    'delete',
-    'add',
-    'share'
-  ].map((v) => `i-ic-baseline-${v}`)
-]
+import {
+  defineConfig,
+  presetAttributify,
+  presetUno,
+  presetIcons,
+  transformerDirectives,
+  transformerVariantGroup
+} from 'unocss'
 
 export default defineConfig({
-  safelist,
-  presets: [presetUno, presetAttributify, presetIcons]
+  presets: [presetUno(), presetAttributify(), presetIcons()],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
+  safelist: [
+    ['xs', 'sm', 'md', 'lg', 'xl'].map(s => [
+      'e-primary',
+      'e-secondary',
+      'e-success',
+      'e-danger',
+      'e-warning',
+      'e-info',
+      `e-button-${s}`
+    ])
+  ].flat(2) as string[]
 })

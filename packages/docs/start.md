@@ -1,5 +1,5 @@
 # Install
 
 ```bash
-npm i @cully/wow-ui
+npm i @cully/eva-ui
 ```

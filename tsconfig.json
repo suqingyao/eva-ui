@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "eva-ui": ["./packages/eva-ui/src/index.ts"],
+      "@eva-ui/components": ["./packages/components/index.ts"],
+      // "@eva-ui/utils": ["./packages/utils/index.ts"],
+      // "@eva-ui/preset": ["./packages/preset/src/index.ts"],
+      // "@eva-ui/cli": ["./packages/cli/src/index.ts"],
+      "@eva-ui/docs": ["./docs/*"]
+    }
+  },
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/playground/**",
+    "**/packages/components/**"
+  ]
+}

@@ -1,18 +1,34 @@
 {
-  "name": "@cully/wow-ui",
+  "name": "@eva-ui/components",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "type": "module",
+  "main": "./dist/components.umd.cjs",
+  "module": "./dist/components.js",
+  "types": "./dist/components/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/components.js",
+      "require": "./dist/components.umd.cjs",
+      "types": "./dist/components/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "test": "vitest",
-    "test:run": "vitest run"
+    "build": "vue-tsc --declaration --emitDeclarationOnly --skipLibCheck && vite build && pnpm run --filter \"../eva-ui\" build",
+    "stub": "vue-tsc --declaration --emitDeclarationOnly --skipLibCheck && vite build --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vue": "^3.2.39"
+  "license": "MIT",
+  "devDependencies": {
+    "@eva-ui/utils": "workspace:^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

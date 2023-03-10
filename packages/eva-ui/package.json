@@ -1,0 +1,35 @@
+{
+  "name": "eva-ui",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "main": "./dist/eva-ui.umd.cjs",
+  "module": "./dist/eva-ui.js",
+  "types": "./dist/types/eva-ui/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/eva-ui.js",
+      "require": "./dist/eva-ui.umd.cjs",
+      "types": "./dist/types/eva-ui/src/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "volar.d.ts"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "vue-tsc --declaration --emitDeclarationOnly --skipLibCheck && vite build",
+    "stub": "vue-tsc --declaration --emitDeclarationOnly --skipLibCheck && vite build --watch"
+  },
+  "dependencies": {
+    "@eva-ui/components": "workspace:^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

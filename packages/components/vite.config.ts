@@ -1,41 +1,26 @@
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
 import UnoCss from 'unocss/vite'
+import VueJSX from '@vitejs/plugin-vue-jsx'
+import Vue from '@vitejs/plugin-vue'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import { resolve } from 'pathe'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './', 'packages')
-    }
-  },
-  plugins: [vue(), vueJsx(), UnoCss()],
   build: {
+    emptyOutDir: false,
+    lib: {
+      entry: resolve(__dirname, 'index.ts'),
+      name: '@eva-ui/components'
+    },
+    cssCodeSplit: true,
     rollupOptions: {
-      external: ['vue', 'vue-router'],
+      external: ['vue'],
       output: {
         globals: {
           vue: 'Vue'
         }
       }
-    },
-    cssCodeSplit: true,
-    minify: 'terser',
-    sourcemap: true,
-    reportCompressedSize: true,
-    lib: {
-      entry: './entry.ts',
-      name: 'WowUI',
-      fileName: 'wow-ui',
-      formats: ['esm', 'umd', 'iife']
     }
   },
-  test: {
-    global: true,
-    environment: 'happy-dom',
-    transformMode: {
-      web: [/.[tj]sx/]
-    }
-  }
+  plugins: [Vue(), VueJSX(), VueSetupExtend(), UnoCss()]
 })
